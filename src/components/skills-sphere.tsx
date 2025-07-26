@@ -59,8 +59,8 @@ const SkillsSphere = () => {
       const sprite = new THREE.Sprite(material);
       
       // Responsive scaling based on screen size
-      const baseScale = isMobile ? 0.8 : 1.2;
-      const scaleFactor = Math.min(currentMount.clientWidth / 800, 1.5);
+      const baseScale = isMobile ? 1.2 : 1.8; // Increased size
+      const scaleFactor = Math.min(currentMount.clientWidth / 800, 2.0); // Increased max scale
       const finalScale = baseScale * scaleFactor;
       
       sprite.scale.set(finalScale, finalScale, finalScale);
@@ -147,14 +147,12 @@ const SkillsSphere = () => {
 
     // Touch events for mobile
     const onTouchMove = (event: TouchEvent) => {
-      event.preventDefault();
       if (event.touches.length === 1) {
         updateInteraction(event.touches[0].clientX, event.touches[0].clientY);
       }
     };
 
     const onTouchStart = (event: TouchEvent) => {
-      event.preventDefault();
       if (event.touches.length === 1) {
         updateInteraction(event.touches[0].clientX, event.touches[0].clientY);
       }
@@ -167,8 +165,8 @@ const SkillsSphere = () => {
     currentMount.addEventListener('mouseleave', onMouseUp);
     
     if (isMobile) {
-      currentMount.addEventListener('touchmove', onTouchMove, { passive: false });
-      currentMount.addEventListener('touchstart', onTouchStart, { passive: false });
+      currentMount.addEventListener('touchmove', onTouchMove, { passive: true });
+      currentMount.addEventListener('touchstart', onTouchStart, { passive: true });
     }
 
     // --- Animation Loop ---
@@ -179,7 +177,7 @@ const SkillsSphere = () => {
       animationFrameId = requestAnimationFrame(animate);
       
       const deltaTime = clock.getDelta();
-      const autoRotationSpeed = isMobile ? 0.0003 : 0.0005;
+      const autoRotationSpeed = isMobile ? 0.002 : 0.003; // Increased auto-rotation speed
       const dampingFactor = isMobile ? 0.015 : 0.02;
       
       // Auto-rotation with user interaction
@@ -210,8 +208,8 @@ const SkillsSphere = () => {
       setCameraPosition();
       
       // Update sprite scales
-      const scaleFactor = Math.min(newWidth / 800, 1.5);
-      const baseScale = isMobile ? 0.8 : 1.2;
+      const scaleFactor = Math.min(newWidth / 800, 2.0); // Increased max scale
+      const baseScale = isMobile ? 1.2 : 1.8; // Increased size
       const finalScale = baseScale * scaleFactor;
       
       tagGroup.children.forEach((child, i) => {
@@ -262,7 +260,7 @@ const SkillsSphere = () => {
   return (
     <div 
       ref={mountRef} 
-      className="relative w-full cursor-grab active:cursor-grabbing touch-none select-none"
+      className="relative w-full cursor-grab active:cursor-grabbing select-none"
       style={{ 
         height: isMobile ? '60vh' : '70vh',
         minHeight: isMobile ? '400px' : '500px'
