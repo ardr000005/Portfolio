@@ -36,7 +36,7 @@ This is my personal portfolio website built with **Next.js (App Router)** and ho
 ## 👨‍💻 About Me
 
 Hi, I’m **Aravind R Nair**, a B.Tech Computer Science student who enjoys building user-friendly and responsive web applications.
-I’m always looking to learn, grow, and improve — whether it’s understanding new technologies, solving real problems, or collaborating with others on meaningful projects. I believe in keeping things simple, clean, and purposeful.
+I’m always looking to learn, grow, and improve whether it’s understanding new technologies, solving real problems, or collaborating with others on meaningful projects. I believe in keeping things simple, clean, and purposeful.
 
 ---
 
