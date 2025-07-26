@@ -37,6 +37,8 @@ This is my personal portfolio website built with **Next.js (App Router)** and ho
 I’m Aravind R Nair, a B.Tech Computer Science student passionate about building intuitive UIs and scalable software.
 ---
 ---
-##⚠️ License
+
+## ⚠️ License
+
 This portfolio is the personal work of Aravind R Nair.
 ---
