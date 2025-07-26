@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 145 100% 98%;
+    --foreground: 145 10% 20%;
+    --card: 145 100% 98%;
+    --card-foreground: 145 10% 20%;
+    --popover: 145 100% 98%;
+    --popover-foreground: 145 10% 20%;
+    --primary: 145 58% 54%;
+    --primary-foreground: 145 30% 98%;
+    --secondary: 145 30% 94%;
+    --secondary-foreground: 145 10% 20%;
+    --muted: 145 30% 94%;
+    --muted-foreground: 145 10% 45%;
+    --accent: 75 100% 50%;
+    --accent-foreground: 75 100% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 145 20% 88%;
+    --input: 145 20% 88%;
+    --ring: 145 58% 54%;
+    --radius: 0.8rem;
+  }
+  .dark {
+    --background: 145 15% 12%;
+    --foreground: 145 30% 95%;
+    --card: 145 15% 12%;
+    --card-foreground: 145 30% 95%;
+    --popover: 145 15% 12%;
+    --popover-foreground: 145 30% 95%;
+    --primary: 145 58% 54%;
+    --primary-foreground: 145 30% 98%;
+    --secondary: 145 15% 18%;
+    --secondary-foreground: 145 30% 98%;
+    --muted: 145 15% 18%;
+    --muted-foreground: 145 20% 65%;
+    --accent: 75 100% 50%;
+    --accent-foreground: 75 100% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 145 15% 22%;
+    --input: 145 15% 22%;
+    --ring: 145 58% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    @apply bg-primary/80 text-primary-foreground;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  /* Animation delay utilities */
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 2px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+  
+  /* Backdrop blur fallback */
+  .backdrop-blur-fallback {
+    background-color: hsl(var(--background) / 0.8);
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background) / 0.1) 0%,
+      hsl(var(--background) / 0.05) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.1);
+  }
+}
