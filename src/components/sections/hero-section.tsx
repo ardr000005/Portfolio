@@ -23,10 +23,15 @@ const HeroSection = () => {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button size="lg" asChild>
-            <Link href="https://drive.google.com/drive/folders/12IrNQo-VkOWxRTSWkADhATowiDnR1jlo?usp=sharing" target="_blank" download>
-              <Download className="mr-2 h-4 w-4" />
-              Download CV
-            </Link>
+          <Link 
+                href="/resume.pdf" 
+                target="_blank"
+                download="Aravind_R_Nair_Resume.pdf"
+          >
+          <Download className="mr-2 h-4 w-4" />
+            Download CV
+          </Link>
+          </Button>
           </Button>
           <Button size="lg" variant="secondary" asChild>
             <Link href="#projects">
