@@ -8,7 +8,7 @@ export const projects = [
     image: '/meda.png',
     image_hint: 'blockchain security',
     tags: ['Blockchain', 'React', 'Node.js', 'IPFS', 'Supabase'],
-    githubUrl: 'https://github.com/Alfy001/KBA',
+    githubUrl: 'https://github.com/ardr000005/Medamex',
   },
   {
     title: 'Privio',
